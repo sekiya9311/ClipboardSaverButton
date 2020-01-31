@@ -6,9 +6,9 @@ namespace ClipboardSaverButton.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        public string Title => typeof(MainWindowViewModel).Assembly.FullName;
+        public string Title => typeof(MainWindowViewModel).Assembly.FullName ?? "";
 
-        private ICommand _saveCommand;
+        private ICommand? _saveCommand;
         public ICommand SaveCommand
             => _saveCommand ??= new DelegateCommand(Save);
 
