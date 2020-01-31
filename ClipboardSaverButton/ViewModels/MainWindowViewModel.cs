@@ -1,17 +1,23 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using System.Windows.Input;
 
 namespace ClipboardSaverButton.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Application";
-        public string Title
-        {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
-        }
+        public string Title => typeof(MainWindowViewModel).Assembly.FullName;
+
+        private ICommand _saveCommand;
+        public ICommand SaveCommand
+            => _saveCommand ??= new DelegateCommand(Save);
 
         public MainWindowViewModel()
+        {
+
+        }
+
+        private void Save()
         {
 
         }
