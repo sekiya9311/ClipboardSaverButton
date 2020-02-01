@@ -14,4 +14,9 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ClipboardSaverButton.Model\ClipboardSaverButton.Model.csproj" />
+    <ProjectReference Include="..\ClipboardSaverButton\ClipboardSaverButton.csproj" />
+  </ItemGroup>
+
 </Project>
