@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardSaverButton", "ClipboardSaverButton\ClipboardSaverButton.csproj", "{74D5A798-9396-4677-82AC-46C1EE5CC03E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardSaverButton", "ClipboardSaverButton\ClipboardSaverButton.csproj", "{74D5A798-9396-4677-82AC-46C1EE5CC03E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardSaverButton.Model", "ClipboardSaverButton.Model\ClipboardSaverButton.Model.csproj", "{8EA644A1-348C-4B9E-B0A8-081DE2DD434E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardSaverButton.Tests", "ClipboardSaverButton.Tests\ClipboardSaverButton.Tests.csproj", "{18CC875C-13D9-4467-9C2D-D319D609E88D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardSaverButton.Tests", "ClipboardSaverButton.Tests\ClipboardSaverButton.Tests.csproj", "{18CC875C-13D9-4467-9C2D-D319D609E88D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{74D5A798-9396-4677-82AC-46C1EE5CC03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74D5A798-9396-4677-82AC-46C1EE5CC03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74D5A798-9396-4677-82AC-46C1EE5CC03E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EA644A1-348C-4B9E-B0A8-081DE2DD434E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EA644A1-348C-4B9E-B0A8-081DE2DD434E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EA644A1-348C-4B9E-B0A8-081DE2DD434E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EA644A1-348C-4B9E-B0A8-081DE2DD434E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18CC875C-13D9-4467-9C2D-D319D609E88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18CC875C-13D9-4467-9C2D-D319D609E88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18CC875C-13D9-4467-9C2D-D319D609E88D}.Release|Any CPU.ActiveCfg = Release|Any CPU

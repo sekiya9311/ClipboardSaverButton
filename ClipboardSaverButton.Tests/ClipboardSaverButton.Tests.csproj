@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClipboardSaverButton.Model\ClipboardSaverButton.Model.csproj" />
     <ProjectReference Include="..\ClipboardSaverButton\ClipboardSaverButton.csproj" />
   </ItemGroup>
 
