@@ -3,6 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="60" Width="100" >
-    <Button Content="Save !" />
+        Title="{Binding Title}" Height="100" Width="100" ResizeMode="NoResize" Topmost="True" >
+    <Button Content="Save !" Command="{Binding SaveCommand}" />
 </Window>
