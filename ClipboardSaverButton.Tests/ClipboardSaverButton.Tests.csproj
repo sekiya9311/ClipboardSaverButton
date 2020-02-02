@@ -19,4 +19,8 @@
     <ProjectReference Include="..\ClipboardSaverButton\ClipboardSaverButton.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
