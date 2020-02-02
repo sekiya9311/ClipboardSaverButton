@@ -1,6 +1,6 @@
-﻿using Prism.Commands;
+﻿using ClipboardSaverButton.Models.Interfaces;
+using Prism.Commands;
 using Prism.Mvvm;
-using System.Windows.Input;
 
 namespace ClipboardSaverButton.ViewModels
 {
@@ -8,18 +8,20 @@ namespace ClipboardSaverButton.ViewModels
     {
         public string Title => typeof(MainWindowViewModel).Assembly.FullName ?? "";
 
-        private ICommand? _saveCommand;
-        public ICommand SaveCommand
+        private DelegateCommand? _saveCommand;
+        public DelegateCommand SaveCommand
             => _saveCommand ??= new DelegateCommand(Save);
 
-        public MainWindowViewModel()
-        {
+        private readonly IClipboardDataSaver _clipboardDataSaver;
 
+        public MainWindowViewModel(IClipboardDataSaver clipboardDataSaver)
+        {
+            _clipboardDataSaver = clipboardDataSaver;
         }
 
         private void Save()
         {
-
+            _clipboardDataSaver.Save();
         }
     }
 }

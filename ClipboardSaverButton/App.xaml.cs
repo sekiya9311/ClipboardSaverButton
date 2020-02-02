@@ -1,6 +1,8 @@
 ﻿using Prism.Ioc;
 using ClipboardSaverButton.Views;
 using System.Windows;
+using ClipboardSaverButton.Models.Interfaces;
+using ClipboardSaverButton.Models.Impls;
 
 namespace ClipboardSaverButton
 {
@@ -16,7 +18,11 @@ namespace ClipboardSaverButton
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterSingleton<IClipboardDataSaver, ClipboardDataSaver>();
+            containerRegistry.RegisterSingleton<IDataSaver, DataSaver>();
+            containerRegistry.RegisterSingleton<IClipboardManager, ClipboardManager>();
+            containerRegistry.RegisterSingleton<IDialogService, DialogServiceWithMessageBox>();
+            containerRegistry.RegisterSingleton<IFilePathInquirer, FilePathInquirer>();
         }
     }
 }
