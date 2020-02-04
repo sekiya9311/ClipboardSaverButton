@@ -31,6 +31,13 @@ namespace ClipboardSaverButton.Tests.Models
                 .Returns(ClipboardDataFormat.Image);
             _filePathInquirer
                 .Setup(x => x.InquerySaveFilePathOfImage())
+                .Callback(() =>
+                {
+                    // Clipboard changed while selected save place
+                    _clipboardManager
+                        .Setup(x => x.GetImage())
+                        .Returns(CreateDummyBitmap());
+                })
                 .Returns("path");
             var dummyImg = CreateDummyBitmap();
             _clipboardManager

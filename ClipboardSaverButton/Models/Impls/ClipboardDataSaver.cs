@@ -44,9 +44,9 @@ namespace ClipboardSaverButton.Models.Impls
 
         private string SaveImage()
         {
-            var dest = _filePathInquirer.InquerySaveFilePathOfImage();
-
             var value = _clipboardManager.GetImage();
+
+            var dest = _filePathInquirer.InquerySaveFilePathOfImage();
 
             _dataSaver.SaveImage(dest, value);
 
