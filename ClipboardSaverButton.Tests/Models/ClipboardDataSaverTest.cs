@@ -109,6 +109,7 @@ namespace ClipboardSaverButton.Tests.Models
                 .Setup(x => x.InquerySaveFilePathOfText())
                 .Callback(() =>
                 {
+                    // Clipboard changed while selected save place
                     _clipboardManager
                         .Setup(x => x.GetText())
                         .Returns("meow");
