@@ -55,9 +55,9 @@ namespace ClipboardSaverButton.Models.Impls
 
         private string[] SaveFile()
         {
-            var dest = _filePathInquirer.InquerySaveFilePath();
-
             var srcFilePaths = _clipboardManager.GetFileDropList();
+            
+            var dest = _filePathInquirer.InquerySaveFilePath();
 
             _dataSaver.SaveFiles(dest, srcFilePaths);
 

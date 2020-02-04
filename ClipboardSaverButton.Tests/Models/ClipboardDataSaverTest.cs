@@ -67,6 +67,13 @@ namespace ClipboardSaverButton.Tests.Models
                 .Returns(ClipboardDataFormat.File);
             _filePathInquirer
                 .Setup(x => x.InquerySaveFilePath())
+                .Callback(() =>
+                {
+                    // Clipboard changed while selected save place
+                    _clipboardManager
+                        .Setup(x => x.GetFileDropList())
+                        .Returns(new[] { "aiueo" });
+                })
                 .Returns("path");
             var dummyPaths = new[]
             {
