@@ -44,9 +44,9 @@ namespace ClipboardSaverButton.Models.Impls
 
         private string SaveImage()
         {
-            var dest = _filePathInquirer.InquerySaveFilePathOfImage();
-
             var value = _clipboardManager.GetImage();
+
+            var dest = _filePathInquirer.InquerySaveFilePathOfImage();
 
             _dataSaver.SaveImage(dest, value);
 
@@ -55,9 +55,9 @@ namespace ClipboardSaverButton.Models.Impls
 
         private string[] SaveFile()
         {
-            var dest = _filePathInquirer.InquerySaveFilePath();
-
             var srcFilePaths = _clipboardManager.GetFileDropList();
+            
+            var dest = _filePathInquirer.InquerySaveFilePath();
 
             _dataSaver.SaveFiles(dest, srcFilePaths);
 
@@ -69,9 +69,9 @@ namespace ClipboardSaverButton.Models.Impls
 
         private string SaveText()
         {
-            var dest = _filePathInquirer.InquerySaveFilePathOfText();
-
             var value = _clipboardManager.GetText();
+
+            var dest = _filePathInquirer.InquerySaveFilePathOfText();
 
             _dataSaver.SaveText(dest, value);
 

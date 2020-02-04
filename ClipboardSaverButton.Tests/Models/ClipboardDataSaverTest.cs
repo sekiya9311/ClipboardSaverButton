@@ -31,6 +31,13 @@ namespace ClipboardSaverButton.Tests.Models
                 .Returns(ClipboardDataFormat.Image);
             _filePathInquirer
                 .Setup(x => x.InquerySaveFilePathOfImage())
+                .Callback(() =>
+                {
+                    // Clipboard changed while selected save place
+                    _clipboardManager
+                        .Setup(x => x.GetImage())
+                        .Returns(CreateDummyBitmap());
+                })
                 .Returns("path");
             var dummyImg = CreateDummyBitmap();
             _clipboardManager
@@ -60,6 +67,13 @@ namespace ClipboardSaverButton.Tests.Models
                 .Returns(ClipboardDataFormat.File);
             _filePathInquirer
                 .Setup(x => x.InquerySaveFilePath())
+                .Callback(() =>
+                {
+                    // Clipboard changed while selected save place
+                    _clipboardManager
+                        .Setup(x => x.GetFileDropList())
+                        .Returns(new[] { "aiueo" });
+                })
                 .Returns("path");
             var dummyPaths = new[]
             {
@@ -93,6 +107,13 @@ namespace ClipboardSaverButton.Tests.Models
                 .Returns(ClipboardDataFormat.Text);
             _filePathInquirer
                 .Setup(x => x.InquerySaveFilePathOfText())
+                .Callback(() =>
+                {
+                    // Clipboard changed while selected save place
+                    _clipboardManager
+                        .Setup(x => x.GetText())
+                        .Returns("meow");
+                })
                 .Returns("path");
             _clipboardManager
                 .Setup(x => x.GetText())
