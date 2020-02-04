@@ -107,6 +107,12 @@ namespace ClipboardSaverButton.Tests.Models
                 .Returns(ClipboardDataFormat.Text);
             _filePathInquirer
                 .Setup(x => x.InquerySaveFilePathOfText())
+                .Callback(() =>
+                {
+                    _clipboardManager
+                        .Setup(x => x.GetText())
+                        .Returns("meow");
+                })
                 .Returns("path");
             _clipboardManager
                 .Setup(x => x.GetText())

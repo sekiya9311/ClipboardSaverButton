@@ -69,9 +69,9 @@ namespace ClipboardSaverButton.Models.Impls
 
         private string SaveText()
         {
-            var dest = _filePathInquirer.InquerySaveFilePathOfText();
-
             var value = _clipboardManager.GetText();
+
+            var dest = _filePathInquirer.InquerySaveFilePathOfText();
 
             _dataSaver.SaveText(dest, value);
 
