@@ -12,19 +12,19 @@ namespace ClipboardSaverButton.Views
         {
             InitializeComponent();
 
-            if (Settings.Default.MainWindowLeft != 0)
+            if (Properties.Settings.Default.MainWindowLeft != 0)
             {
-                this.Left = Settings.Default.MainWindowLeft;
-                this.Top = Settings.Default.MainWindowTop;
+                this.Left = Properties.Settings.Default.MainWindowLeft;
+                this.Top = Properties.Settings.Default.MainWindowTop;
             }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Settings.Default.MainWindowLeft = this.Left;
-            Settings.Default.MainWindowTop = this.Top;
+            Properties.Settings.Default.MainWindowLeft = this.Left;
+            Properties.Settings.Default.MainWindowTop = this.Top;
 
-            Settings.Default.Save();
+            Properties.Settings.Default.Save();
         }
     }
 }
