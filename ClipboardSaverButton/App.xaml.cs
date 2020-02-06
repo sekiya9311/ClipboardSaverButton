@@ -23,6 +23,7 @@ namespace ClipboardSaverButton
             containerRegistry.RegisterSingleton<IClipboardManager, ClipboardManager>();
             containerRegistry.RegisterSingleton<IDialogService, DialogServiceWithMessageBox>();
             containerRegistry.RegisterSingleton<IFilePathInquirer, FilePathInquirer>();
+            containerRegistry.RegisterSingleton<ISettings, SettingsWrapper>();
         }
     }
 }
