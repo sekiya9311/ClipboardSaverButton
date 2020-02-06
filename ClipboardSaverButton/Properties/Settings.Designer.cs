@@ -25,7 +25,7 @@ namespace ClipboardSaverButton.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public double MainWindowLeft {
             get {
                 return ((double)(this["MainWindowLeft"]));
@@ -37,7 +37,7 @@ namespace ClipboardSaverButton.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public double MainWindowTop {
             get {
                 return ((double)(this["MainWindowTop"]));
