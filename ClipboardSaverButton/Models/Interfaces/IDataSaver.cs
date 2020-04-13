@@ -7,6 +7,5 @@ namespace ClipboardSaverButton.Models.Interfaces
     {
         void SaveImage(string path, BitmapSource value);
         void SaveText(string path, string value);
-        void SaveFiles(string path, IEnumerable<string> values);
     }
 }

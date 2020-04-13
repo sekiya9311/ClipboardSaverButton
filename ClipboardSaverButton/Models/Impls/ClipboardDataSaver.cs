@@ -1,6 +1,5 @@
 ﻿using ClipboardSaverButton.Models.Interfaces;
 using System;
-using System.IO;
 using System.Linq;
 
 namespace ClipboardSaverButton.Models.Impls
@@ -32,9 +31,13 @@ namespace ClipboardSaverButton.Models.Impls
                 {
                     ClipboardDataFormat.Image => new[] { SaveImage() },
                     ClipboardDataFormat.Text => new[] { SaveText() },
-                    ClipboardDataFormat.File => SaveFile(),
-                    _ => throw new InvalidOperationException()
+                    _ => Array.Empty<string>()
                 };
+
+                if (destFiles.Any())
+                    return;
+
+                _dialogService.ShowMessage("unsupported...");
             }
             catch (Exception ex)
             {
@@ -51,20 +54,6 @@ namespace ClipboardSaverButton.Models.Impls
             _dataSaver.SaveImage(dest, value);
 
             return dest;
-        }
-
-        private string[] SaveFile()
-        {
-            var srcFilePaths = _clipboardManager.GetFileDropList();
-            
-            var dest = _filePathInquirer.InquerySaveFilePath();
-
-            _dataSaver.SaveFiles(dest, srcFilePaths);
-
-            var destPaths = srcFilePaths
-                .Select(x => Path.Combine(dest, Path.GetFileName(x)))
-                .ToArray();
-            return destPaths;
         }
 
         private string SaveText()

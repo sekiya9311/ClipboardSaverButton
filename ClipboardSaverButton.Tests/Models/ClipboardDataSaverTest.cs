@@ -60,46 +60,6 @@ namespace ClipboardSaverButton.Tests.Models
         }
 
         [Fact]
-        public void SaveFile()
-        {
-            _clipboardManager
-                .SetupGet(x => x.CurrentRetenteFormat)
-                .Returns(ClipboardDataFormat.File);
-            _filePathInquirer
-                .Setup(x => x.InquerySaveFilePath())
-                .Callback(() =>
-                {
-                    // Clipboard changed while selected save place
-                    _clipboardManager
-                        .Setup(x => x.GetFileDropList())
-                        .Returns(new[] { "aiueo" });
-                })
-                .Returns("path");
-            var dummyPaths = new[]
-            {
-                Path.Combine("foo", "bar"),
-                Path.Combine("hoge", "fuga")
-            };
-            _clipboardManager
-                .Setup(x => x.GetFileDropList())
-                .Returns(dummyPaths);
-
-            var obj = new ClipboardDataSaver(
-                _clipboardManager.Object,
-                _dataSaver.Object,
-                _filePathInquirer.Object,
-                _dialogService.Object);
-            obj.Save();
-
-            _filePathInquirer
-                .Verify(x => x.InquerySaveFilePath());
-            _clipboardManager
-                .Verify(x => x.GetFileDropList());
-            _dataSaver
-                .Verify(x => x.SaveFiles("path", dummyPaths));
-        }
-
-        [Fact]
         public void SaveText()
         {
             _clipboardManager
@@ -149,7 +109,7 @@ namespace ClipboardSaverButton.Tests.Models
             obj.Save();
 
             _dialogService
-                .Verify(x => x.ShowMessage("error", It.IsAny<string>()));
+                .Verify(x => x.ShowMessage("unsupported...", It.IsAny<string>()));
         }
 
         private BitmapSource CreateDummyBitmap()

@@ -8,22 +8,6 @@ namespace ClipboardSaverButton.Models.Impls
 {
     public class DataSaver : IDataSaver
     {
-        public void SaveFiles(string path, IEnumerable<string> values)
-        {
-            if (!Directory.Exists(path))
-                throw new DirectoryNotFoundException();
-
-            foreach (var srcFile in values)
-            {
-                // 無いやつ、ディレクトリは除外(めんどいから)
-                if (!File.Exists(srcFile)) continue;
-
-                var fileName = Path.GetFileName(srcFile);
-                var dest = Path.Combine(path, fileName);
-                File.Copy(srcFile, dest);
-            }
-        }
-
         public void SaveImage(string path, BitmapSource value)
         {
             BitmapEncoder encoder = Path.GetExtension(path) switch
